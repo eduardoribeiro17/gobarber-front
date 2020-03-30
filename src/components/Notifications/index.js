@@ -43,7 +43,7 @@ export default function Notifications() {
   }
 
   async function handleMarkAsRead(id) {
-    console.tron.log(id);
+    console.tron.log(`notifications/${id}`);
     await api.put(`notifications/${id}`);
 
     setNotifications(
@@ -56,7 +56,7 @@ export default function Notifications() {
   return (
     <Container>
       <Badge onClick={handleToggleVisible} hasUnread={hasUnread}>
-        <MdNotifications color="7159c1" size={20} />
+        <MdNotifications color="#7159c1" size={20} />
       </Badge>
       <NotificationList visible={visible}>
         <Scroll>
